@@ -52,3 +52,11 @@ gulp.task('app-js', function () {
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest(publicPath + 'js/'));
 });
+
+/*
+ * Watcher
+ */
+gulp.task('watch', function () {
+    gulp.watch(assetsPath + 'scss/*.scss', ['app-css'] );
+    gulp.watch(assetsPath + 'js/*.js', ['app-js'] );
+});
