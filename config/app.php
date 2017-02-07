@@ -4,6 +4,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | 500px API
+    |--------------------------------------------------------------------------
+    |
+    | Access to connect to the 500px API from our server side script
+    */
+    '500px_host' => 'https://api.500px.com/v1/',
+    '500px_consumer_key' => 'UcoRq8Dwgid2KfnNthhJraQP4XoUat9Y1ilGrD15',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
     |
@@ -12,7 +22,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => '1000px',
 
     /*
     |--------------------------------------------------------------------------
