@@ -1,40 +1,39 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## 1000px Web Application
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This application is a simple client to display 500px's most popular shots. 
+1000px is designed to be simple, user friendly and responsive to fit any device. 
 
-## About Laravel
+## Technology choices
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+When building this application, I made several calls on which technology I used according to the specifications.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Backend technology
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+1000px is built using [Laravel framework](https://laravel.com/) on PHP for the following reasons:
+* Very easy to install, one command. Very easy to reproduce. 
+* Highly scalable 
+* Built following the MVC pattern
+* Comparable to Ruby on Rails
+* Perfect for simple applications
+* Great performances
 
-## Learning Laravel
+We only use Laravel as the **controller** part of our application to send the **model** (500px shots)
+ to our view. 
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+### Frontend technologies
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+* [Vue.js](https://vuejs.org/): lightweight modern Javascript framework, really easy to deploy and perfect to handle JSON data. 
+It will handle here the **view** of the application.
+* [Gulp](http://gulpjs.com/): load our assets and make them ready for production as well as maintaining them up to date later. 
+* [SASS](http://sass-lang.com/): to compile and organize our stylesheet as well as managing Bootstrap. 
 
-## Contributing
+Some other libraries are used: 
+* [jQuery](https://jquery.com/): Enhancing our Javascript and making our scripts cleaner and more efficient. 
+* [Masonry](http://masonry.desandro.com/): Used to create a grid layout of the photos. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## About 1000px 
 
-## Security Vulnerabilities
+This application is free to use and developed under a GPL license. 
+Feel free to use it for your project, any new commit is welcome. 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+For any question, feel free to contact me at francois.forest@y2f-design.fr
