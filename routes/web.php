@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+ * Home Page rendering
+ */
+Route::get('/', ['as' => 'index', 'uses' => 'ApplicationController@render']);
