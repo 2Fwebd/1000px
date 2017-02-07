@@ -19,4 +19,4 @@ Route::get('/', ['as' => 'index', 'uses' => 'ApplicationController@render']);
 /*
  * 500px API photos fetcher
  */
-Route::get('/fetch', ['as' => 'fetch', 'uses' => 'ApplicationController@fetch']);
+Route::post('/fetch', ['as' => 'fetch', 'uses' => 'ApplicationController@fetch']);

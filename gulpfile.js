@@ -48,7 +48,7 @@ gulp.task('app-js', function () {
         'node_modules/jquery/dist/jquery.js',
         assetsPath +'js/app.js',
     ])
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest(publicPath + 'js/'));
 });

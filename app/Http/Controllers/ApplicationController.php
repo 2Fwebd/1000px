@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use \Illuminate\Http\Request;
+
 /**
  * Class ApplicationController
  *
@@ -48,13 +50,14 @@ class ApplicationController
     /**
      * Make a call to the 500Px's API to get the most popular shots
      *
+     * @param $request \Illuminate\Http\Request
      * @return string - our JSON content like {"current_page":1,"total_pages":1000,"total_items":64560,"photos":[...]}
      */
-    public function fetch()
+    public function fetch(\Illuminate\Http\Request $request)
     {
 
         // Set our parameters:
-        $this->page = 1;
+        $this->page = $request['page'];
 
         // Our API url that we are calling
         $url = $this->getApiUrl();
