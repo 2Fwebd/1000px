@@ -45,6 +45,20 @@ var App = new Vue({
     methods: {
 
         /**
+         * Build the layout using Masonry
+         */
+        buildLayout: function () {
+
+            var $photosWrapper = jQuery('#app-grid ul');
+
+            $photosWrapper.masonry({
+                itemSelector: '.shot',
+                gutter: 20,
+            });
+
+        },
+
+        /**
          * Calls our /fetch route to get shots from the 500px API according to the current page
          */
         fetch: function () {
@@ -86,7 +100,12 @@ var App = new Vue({
                     self.shots = parsed.photos;
 
                     // Update the page count
-                    self.currentPage = parsed.current_page++;
+                    self.currentPage = parsed.current_page + 1;
+
+                    // Stop the loader
+                    self.isLoading = false;
+
+                    self.buildLayout();
 
                 }
 

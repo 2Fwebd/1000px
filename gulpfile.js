@@ -44,9 +44,9 @@ gulp.task('app-js', function () {
     // returns a Node.js stream, but no handling of error messages
     return gulp.src([
         'node_modules/vue/dist/vue.js',
-        'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
         'node_modules/jquery/dist/jquery.js',
-        assetsPath +'js/app.js',
+        'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
+        assetsPath +'js/app.js'
     ])
         //.pipe(uglify())
         .pipe(concat('app.min.js'))
@@ -57,6 +57,6 @@ gulp.task('app-js', function () {
  * Watcher
  */
 gulp.task('watch', function () {
-    gulp.watch(assetsPath + 'scss/*.scss', ['app-css'] );
+    gulp.watch(assetsPath + 'sass/*.scss', ['app-css'] );
     gulp.watch(assetsPath + 'js/*.js', ['app-js'] );
 });

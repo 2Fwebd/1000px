@@ -1,0 +1,12 @@
+#app-grid{
+  margin: 5% 0;
+  ul{
+    position: relative;
+    li.shot{
+      list-style-type: none;
+      padding: 0;
+      position: absolute;
+      float: left;
+    }
+  }
+}

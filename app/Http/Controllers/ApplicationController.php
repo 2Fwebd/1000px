@@ -36,7 +36,8 @@ class ApplicationController
             'consumer_key' => config('app.500px_consumer_key'),
             'page'         => $this->page,
             'feature'      => 'popular',
-            'sort'         => 'times_viewed'
+            'sort'         => 'times_viewed',
+            'image_size'   => 20
         ]);
 
         // Api Endpoint
