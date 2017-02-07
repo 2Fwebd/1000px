@@ -10,6 +10,8 @@
 
         <title>@yield('title') &mdash; 1000px</title>
 
+        <link rel="stylesheet" href="{{ url('css/app.css') }}">
+
     </head>
 
 <body>
@@ -21,6 +23,8 @@
         </section>
 
     </div>
+
+    <script type="text/javascript" src="{{ url('js/app.min.js') }}"></script>
 
 </body>
 </html>

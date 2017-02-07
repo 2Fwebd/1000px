@@ -16,6 +16,7 @@ class ApplicationController
 
     /**
      * Current page for the API
+     * Saved as an attribute so we can use it several methods
      *
      * @var int
      */

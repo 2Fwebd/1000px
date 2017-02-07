@@ -13,5 +13,14 @@
     "laravel-mix": "^0.6.0",
     "lodash": "^4.16.2",
     "vue": "^2.0.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "masonry-layout": "^4.1.1",
+    "uglify": "^0.1.5"
   }
 }

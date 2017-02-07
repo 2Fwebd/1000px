@@ -4,9 +4,12 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <div class="container">
 
-        <h1>Hello World!</h1>
+        <header id="page-header">
+            <h1>Welcome on 1000px</h1>
+            <h3>Get the best shots out of 500px every day.</h3>
+        </header>
 
     </div>
 
