@@ -1,3 +1,16 @@
 body{
   font-family: "Gibson";
 }
+
+#app-content{
+  margin: 10% 0;
+  #page-header{
+    h1{
+      color: darken($text-color, 20%);
+      font-weight: 600;
+    }
+    h3{
+      color: lighten($text-color, 20%);
+    }
+  }
+}

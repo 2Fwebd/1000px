@@ -45,6 +45,7 @@ gulp.task('app-js', function () {
     return gulp.src([
         'node_modules/vue/dist/vue.js',
         'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
+        'node_modules/jquery/dist/jquery.js',
         assetsPath +'js/app.js',
     ])
         .pipe(uglify())

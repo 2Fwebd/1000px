@@ -11,6 +11,8 @@
             <h3>Get the best shots out of 500px every day.</h3>
         </header>
 
+        @include('includes.grid')
+
     </div>
 
 @endsection
