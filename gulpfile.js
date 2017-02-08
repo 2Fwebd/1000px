@@ -48,7 +48,7 @@ gulp.task('app-js', function () {
         'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
         assetsPath +'js/app.js'
     ])
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest(publicPath + 'js/'));
 });
