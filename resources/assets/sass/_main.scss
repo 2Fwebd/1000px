@@ -16,6 +16,14 @@ body{
   }
 }
 
+#app-footer{
+  margin: 2% 0;
+  p{
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
 // Hide while loading
 [v-cloak],
 [v-cloak] .v-cloak--hidden{ display: none !important; }

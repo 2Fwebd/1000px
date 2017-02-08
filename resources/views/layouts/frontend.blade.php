@@ -16,17 +16,21 @@
 
     </head>
 
-<body>
+    <body>
 
-    <div id="app-wrapper">
+        <div id="app-wrapper">
 
-        <section id="app-content">
-            @yield('content')
-        </section>
+            <section id="app-content">
+                @yield('content')
+            </section>
 
-    </div>
+            <footer id="app-footer" class="text-center">
+                <p>&copy; 2Fwebd - Photos can be found on <a href="https://500px.com" target="_blank">500px</a></p>
+            </footer>
 
-    <script type="text/javascript" src="{{ url('js/app.min.js') }}"></script>
+        </div>
 
-</body>
+        <script type="text/javascript" src="{{ url('js/app.min.js') }}"></script>
+
+    </body>
 </html>
