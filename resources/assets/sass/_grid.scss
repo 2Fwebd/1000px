@@ -21,7 +21,6 @@
   .app-loader{
     padding: 10% 0;
     text-align: center;
-    list-style-type: none;
     // Inspired from: https://connoratherton.com/loaders
     div{
       display: inline-block;
@@ -48,6 +47,21 @@
         -webkit-transform:rotate(360deg);
         transform:rotate(360deg)}
 
+    }
+  }
+  #app-pagination{
+    margin: 5% 0;
+    a.btn.btn-success{
+      border-radius: 40px;
+      padding: 10px 30px 8px 30px;
+      font-size: 18px;
+      background: $brand-primary;
+      border:0;
+      transition: background .2s ease-out;
+      &:hover{
+        background: lighten($brand-primary, 10%);
+        transition: background .3s ease-in;
+      }
     }
   }
 }

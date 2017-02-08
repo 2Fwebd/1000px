@@ -37,7 +37,7 @@ class ApplicationController
             'page'         => $this->page,
             'feature'      => 'popular',
             'sort'         => 'times_viewed',
-            'image_size'   => 20
+            'image_size'   => 4
         ]);
 
         // Api Endpoint

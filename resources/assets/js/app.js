@@ -22,7 +22,10 @@ var App = new Vue({
         isLoading: true,
 
         // Page Watcher
-        currentPage: 1,
+        currentPage: 0,
+
+        // Layout State Watcher
+        masonryBuilt: false,
 
         // Images handler
         shots: []
@@ -49,11 +52,20 @@ var App = new Vue({
          */
         buildLayout: function () {
 
-            var $photosWrapper = jQuery('#app-grid ul');
+            var self = this,
+                $photosWrapper = jQuery('#app-grid ul'),
+                buttonOffset = jQuery("#app-pagination").offset().top;
 
-            $photosWrapper.masonry({
-                itemSelector: '.shot',
-            });
+            if(!self.masonryBuilt) {
+                $photosWrapper.masonry({ itemSelector: '.shot' });
+                self.masonryBuilt = true;
+            } else {
+                // We destroy the layout first
+                $photosWrapper.masonry('destroy');
+                $photosWrapper.masonry({ itemSelector: '.shot' });
+                // Scroll back to where our button was
+                jQuery("html, body").animate({ scrollTop: buttonOffset }, 1000);
+            }
 
         },
 
@@ -78,6 +90,12 @@ var App = new Vue({
                 }
             });
 
+            /*
+             * The page count starts at 0 and whenever this function is called
+             * We update to the next page, therefore we only have one function.
+             */
+            self.currentPage = self.currentPage + 1;
+
             // AJAX Call
             jQuery.ajax({
                 url : url,
@@ -96,10 +114,9 @@ var App = new Vue({
                     var parsed = JSON.parse(data);
 
                     // Saved the photos to render them right away
-                    self.shots = parsed.photos;
-
-                    // Update the page count
-                    self.currentPage = parsed.current_page + 1;
+                    parsed.photos.forEach(function (shot) {
+                        self.shots.push(shot);
+                    });
 
                     // Stop the loader
                     self.isLoading = false;
@@ -107,6 +124,8 @@ var App = new Vue({
                     // To make sure the DOM is here before applying the layout
                     Vue.nextTick(function () {
                         setTimeout(function () {
+                            // We re-int our layout
+                            self.masonryBuilt = true;
                             // Display the images
                             self.buildLayout();
                         }, 200);
