@@ -5,6 +5,7 @@ body{
 #app-content{
   margin: 10% 0;
   #page-header{
+    margin: 0 2%;
     h1{
       color: darken($text-color, 20%);
       font-weight: 600;
@@ -13,4 +14,19 @@ body{
       color: lighten($text-color, 20%);
     }
   }
+}
+
+// Hide while loading
+[v-cloak],
+[v-cloak] .v-cloak--hidden{ display: none !important; }
+// Vue.js animation
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-active {
+  transform: translateY(200px);
+  opacity: 0;
 }

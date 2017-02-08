@@ -53,7 +53,6 @@ var App = new Vue({
 
             $photosWrapper.masonry({
                 itemSelector: '.shot',
-                gutter: 20,
             });
 
         },
@@ -105,14 +104,19 @@ var App = new Vue({
                     // Stop the loader
                     self.isLoading = false;
 
-                    self.buildLayout();
+                    // To make sure the DOM is here before applying the layout
+                    Vue.nextTick(function () {
+                        setTimeout(function () {
+                            // Display the images
+                            self.buildLayout();
+                        }, 200);
+                    });
 
                 }
 
             });
 
-        },
-
+        }
 
     }
 
