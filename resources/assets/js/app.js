@@ -28,7 +28,7 @@ var App = new Vue({
         masonryBuilt: false,
 
         // Images handler
-        shots: []
+        shots: [],
 
     },
 
@@ -53,10 +53,10 @@ var App = new Vue({
         buildLayout: function () {
 
             var self = this,
-                $photosWrapper = jQuery('#app-grid ul'),
+                $photosWrapper = jQuery('#app-grid ul.masonry-wrapper'),
                 buttonOffset = jQuery("#app-pagination").offset().top;
 
-            if(!self.masonryBuilt) {
+            if(self.masonryBuilt == false) {
                 $photosWrapper.masonry({ itemSelector: '.shot' });
                 self.masonryBuilt = true;
             } else {
@@ -66,6 +66,16 @@ var App = new Vue({
                 // Scroll back to where our button was
                 jQuery("html, body").animate({ scrollTop: buttonOffset }, 1000);
             }
+
+            // Display additional information on the mouse hover
+            $photosWrapper.find('li.shot').hover(
+                function () {
+                    jQuery(this).addClass("is-hover");
+                },
+                function () {
+                    jQuery(this).removeClass("is-hover");
+                }
+            );
 
         },
 
@@ -108,6 +118,10 @@ var App = new Vue({
 
                     // If we don't have any result
                     if(data.length == 0) {
+                        // Stop the loader
+                        self.isLoading = false;
+                        // Return an error
+                        console.error('Something wrong happened! On the server side, check the log.');
                         return;
                     }
                     // We parse the result
