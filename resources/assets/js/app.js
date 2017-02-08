@@ -54,18 +54,25 @@ var App = new Vue({
 
             var self = this,
                 $photosWrapper = jQuery('#app-grid ul.masonry-wrapper'),
-                buttonOffset = jQuery("#app-pagination").offset().top;
+                $paginator = jQuery("#app-pagination"),
+                paginatorOffset = $paginator.offset().top,
+                paginatorHeight = $paginator.height();
 
+            // We either create the layout or destroy it first then we create it
             if(self.masonryBuilt == false) {
                 $photosWrapper.masonry({ itemSelector: '.shot' });
-                self.masonryBuilt = true;
             } else {
                 // We destroy the layout first
                 $photosWrapper.masonry('destroy');
                 $photosWrapper.masonry({ itemSelector: '.shot' });
                 // Scroll back to where our button was
-                jQuery("html, body").animate({ scrollTop: buttonOffset }, 1000);
+                jQuery("html, body").animate({
+                    scrollTop: (paginatorOffset - paginatorHeight)
+                }, 1000);
             }
+
+            // We re-int our layout
+            self.masonryBuilt = true;
 
             // Display additional information on the mouse hover
             $photosWrapper.find('li.shot').hover(
@@ -138,8 +145,6 @@ var App = new Vue({
                     // To make sure the DOM is here before applying the layout
                     Vue.nextTick(function () {
                         setTimeout(function () {
-                            // We re-int our layout
-                            self.masonryBuilt = true;
                             // Display the images
                             self.buildLayout();
                         }, 200);

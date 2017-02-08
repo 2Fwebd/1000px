@@ -1,6 +1,6 @@
 @media (max-width: 992px) {
   #app-grid {
-    ul {
+    ul.masonry-wrapper {
       li.shot {
         width: 46%;
         margin: 0 2% 50px;
@@ -10,7 +10,7 @@
 }
 @media (max-width: 600px) {
   #app-grid {
-    ul {
+    ul.masonry-wrapper {
       li.shot {
         width: 96%;
         margin: 0 2% 30px;

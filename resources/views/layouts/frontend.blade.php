@@ -25,7 +25,7 @@
             </section>
 
             <footer id="app-footer" class="text-center">
-                <p>&copy; 2Fwebd - Photos can be found on <a href="https://500px.com" target="_blank">500px</a></p>
+                <p>&copy; 2017 François Forest - Photos can be found on <a href="https://500px.com" target="_blank">500px</a></p>
             </footer>
 
         </div>

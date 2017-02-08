@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \Illuminate\Http\Request;
+use ErrorException;
 
 /**
  * Class ApplicationController
@@ -51,20 +52,26 @@ class ApplicationController
     /**
      * Make a call to the 500Px's API to get the most popular shots
      *
-     * @param $request \Illuminate\Http\Request
+     * @param $request \Illuminate\Http\Request - The HTTP request
      * @return string - our JSON content like {"current_page":1,"total_pages":1000,"total_items":64560,"photos":[...]}
      */
     public function fetch(\Illuminate\Http\Request $request)
     {
 
-        // Set our parameters:
-        $this->page = $request['page'];
+        // Set our current page:
+        $this->page = (isset($request['page'])) ? $request['page']: $this->page;
 
         // Our API url that we are calling
         $url = $this->getApiUrl();
 
         // Call it
-        $stream = file_get_contents($url);
+        try {
+            $stream = file_get_contents($url);
+        }
+        // If the API return anything unexpected
+        catch (ErrorException $e) {
+            die();
+        }
 
         // Display the stream
         echo $stream;
